@@ -10,9 +10,9 @@ namespace Array
     {        
         static void Main(string[] args)
         {
-            Exercise ex1 = new Exercise();
-            ex1.Execute();
-            ex1.Description();
+            Exercises exercises = new Exercises();
+            exercises.RunExercise2();
+           
         }
     }
 }
