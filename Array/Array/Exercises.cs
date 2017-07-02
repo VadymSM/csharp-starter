@@ -30,6 +30,31 @@ namespace Array
             printArray(array);
         }
 
+        public void RunExercise3()
+        {
+            int[] array = CreateArray();
+            int indexToInput = inputIndexToInsert();
+            array = deleteElementFromArray(array, indexToInput);
+            printArray(array);
+
+        }
+
+        private int[] deleteElementFromArray(int[] array, int indexOfRemoved)
+        {
+            int[] newArray = new int[array.Length - 1];
+            for (int i = array.Length - 1, j = newArray.Length - 1; i >= 0; i--)
+            {
+                if (i == indexOfRemoved)
+                {
+                    continue;
+                }
+                newArray[j--] = array[i];
+            }
+            return newArray;
+        }
+
+        
+
         private void printArray(int[] array)
         {
             Console.WriteLine();
