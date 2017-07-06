@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Array
 {
+    // Notes: 
+    // rename mothods according to conventions: ThisIsMyMethod
+    // rename method inputIndexToInsert to GetInputIndex
+    // rename method inputValueToInsert to GetInputValue
     class Exercises
     {
         public void RunExercise1()
@@ -95,7 +99,7 @@ namespace Array
                 targetArray[i+1] = sourceArray[i];
             }
         }
-
+                
         protected void copyArrayHead(int[] sourceArray, int[] targetArray, int endIndex)
         {
             
