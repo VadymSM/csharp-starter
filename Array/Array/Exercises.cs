@@ -27,6 +27,7 @@ namespace Array
         public void RunExercise2()
         {
             int[] array = CreateArray();
+            Console.WriteLine("");
             int indexToInput = inputIndexToInsert();
             int valueToInput = inputValueToInsert();
            
@@ -83,12 +84,25 @@ namespace Array
             return number;
         }
 
-        protected int[] insertIntoArray(int[] array, int value, int index)
+        protected int[] insertIntoArray(int[] sourceArray, int value, int index)
         {
-            int[] targetArray = new int[array.Length + 1];
-            copyArrayHead(array, targetArray, index);
-            setValueAtIndex(targetArray, value, index);
-            copyArrayTail(array, targetArray, index);
+            int[] targetArray = new int[sourceArray.Length + 1];
+            //copyArrayHead(array, targetArray, index);
+            //setValueAtIndex(targetArray, value, index);
+            //copyArrayTail(array, targetArray, index);
+            for(int i = 0, j = 0; i < targetArray.Length; j++, i++)
+            {
+
+                if(i == index)
+                {
+                    targetArray[i] = value;
+                    j--;
+                }
+                else
+                {
+                    targetArray[i] = sourceArray[j];
+                }
+            }
             return targetArray;
         }
 
