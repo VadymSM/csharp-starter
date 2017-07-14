@@ -27,24 +27,64 @@ namespace Array
         public void RunExercise2()
         {
             int[] array = CreateArray();
-            Console.WriteLine("");
-            int indexToInput = inputIndexToInsert();
-            int valueToInput = inputValueToInsert();
+            Console.WriteLine();
+            Console.WriteLine("Enter the new index of array, please.");
+            int indexToInput = GetInputIndex();
+            int valueToInput = GetInputValue();
            
-            array = insertIntoArray(array, valueToInput, indexToInput);
+            array = InsertIntoArray(array, valueToInput, indexToInput);
             printArray(array);
         }
 
         public void RunExercise3()
         {
             int[] array = CreateArray();
-            int indexToInput = inputIndexToInsert();
-            array = deleteElementFromArray(array, indexToInput);
+            int indexToInput = GetInputIndex();
+            array = DeleteElementFromArray(array, indexToInput);
             printArray(array);
 
         }
 
-        private int[] deleteElementFromArray(int[] array, int indexOfRemoved)
+        public void RunExercise4()
+        {
+            int min = 0;
+            int max = 100;
+
+            Console.WriteLine("Enter array size: ");
+            int size = int.Parse(Console.ReadLine());
+
+            Int32[] array = new Int32[size];
+
+            Random randNum = new Random();
+
+            for(int i = 0; i < array.Length; i++)
+            {
+                array[i] = randNum.Next(min, max);
+            }
+
+            Console.WriteLine();
+
+            for (int j = 0; j < array.Length; j++)
+            {
+                Console.WriteLine("Here is your array: " + array[j]);
+            }
+
+            
+
+            for(int k = 0; k < array.Length; k++)
+            {
+                if(array[k] % 2 == 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine(array[k]);
+                }
+            }
+
+            
+            Console.ReadKey();
+        }
+
+        private int[] DeleteElementFromArray(int[] array, int indexOfRemoved)
         {
             int[] newArray = new int[array.Length - 1];
             for (int i = array.Length - 1, j = newArray.Length - 1; i >= 0; i--)
@@ -70,21 +110,21 @@ namespace Array
             Console.ReadKey();
         }
 
-        protected int inputIndexToInsert()
+        protected int GetInputIndex()
         {
             Console.WriteLine("Enter index of array: ");
             int indexOfArray = int.Parse(Console.ReadLine());
             return indexOfArray;
         }
 
-        protected int inputValueToInsert()
+        protected int GetInputValue()
         {
             Console.WriteLine("Enter number");
             int number = int.Parse(Console.ReadLine());
             return number;
         }
 
-        protected int[] insertIntoArray(int[] sourceArray, int value, int index)
+        protected int[] InsertIntoArray(int[] sourceArray, int value, int index)
         {
             int[] targetArray = new int[sourceArray.Length + 1];
             //copyArrayHead(array, targetArray, index);
@@ -105,7 +145,7 @@ namespace Array
             }
             return targetArray;
         }
-
+        /*
         private void copyArrayTail(int[] sourceArray, int[] targetArray, int index)
         {
             for (int i = index; i < sourceArray.Length; i++)
@@ -127,8 +167,8 @@ namespace Array
         {
             array[index] = value;
         }
+        */
 
-        
         private int[] CreateArray()
         {
             Console.WriteLine("Enter array size: ");
@@ -143,8 +183,8 @@ namespace Array
             while (!isFilled)
             {
 
-                int number = inputValueToInsert();
-                int indexOfArray = inputIndexToInsert();
+                int number = GetInputValue();
+                int indexOfArray = GetInputIndex();
 
                 array[indexOfArray] = number;
                 array2[indexOfArray] = true;

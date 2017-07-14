@@ -11,8 +11,9 @@ namespace Array
         static void Main(string[] args)
         {
             Exercises exercises = new Exercises();
-            exercises.RunExercise2();
+            //exercises.RunExercise2();
             //exercises.RunExercise3();
+            exercises.RunExercise4();
            
 
         }
