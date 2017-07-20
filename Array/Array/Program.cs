@@ -13,8 +13,11 @@ namespace Array
             Exercises exercises = new Exercises();
             //exercises.RunExercise2();
             //exercises.RunExercise3();
-            exercises.RunExercise4();
-           
+            //exercises.RunExercise4();
+            Console.WriteLine(exercises.RunExersice6(5));
+            Console.WriteLine(exercises.RunExersice7(5));
+
+            Console.ReadKey();
 
         }
     }

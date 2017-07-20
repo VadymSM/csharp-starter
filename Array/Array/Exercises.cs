@@ -70,18 +70,50 @@ namespace Array
             }
 
             
-
             for(int k = 0; k < array.Length; k++)
             {
                 if(array[k] % 2 == 0)
-                {
+                {                    
                     Console.WriteLine();
                     Console.WriteLine(array[k]);
                 }
+                               
             }
 
             
             Console.ReadKey();
+        }
+
+        public void RunExercise5()
+        {
+            int min = 0;
+            int max = 100;
+
+            Random randNum = new Random();
+
+
+        }
+
+        public int RunExersice6(int number)
+        {
+            if (number == 0)
+                return 1;
+
+            return number * RunExersice6(number - 1);                     
+
+        }
+
+        public int RunExersice7(int number)
+        {             
+            int factorial = 1;
+
+            for (int i = 1; i <= number; i++)
+            {
+                factorial = factorial * i;
+            }
+
+            return factorial;
+            
         }
 
         private int[] DeleteElementFromArray(int[] array, int indexOfRemoved)
