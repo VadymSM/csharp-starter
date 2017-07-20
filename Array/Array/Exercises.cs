@@ -84,12 +84,17 @@ namespace Array
             Console.ReadKey();
         }
 
-        public void RunExercise5()
+        public int RunExercise5(int[] number)
         {
-            int min = 0;
-            int max = 100;
-
             Random randNum = new Random();
+            int x = randNum.Next(1, 150);
+
+            if (number.Contains(x))
+            {
+                x = RunExercise5(number);
+            }
+
+            return x;
 
 
         }

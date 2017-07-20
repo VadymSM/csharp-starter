@@ -14,8 +14,10 @@ namespace Array
             //exercises.RunExercise2();
             //exercises.RunExercise3();
             //exercises.RunExercise4();
-            Console.WriteLine(exercises.RunExersice6(5));
-            Console.WriteLine(exercises.RunExersice7(5));
+            int[] number = new int[10];
+            Console.WriteLine(exercises.RunExercise5(number));
+            //Console.WriteLine(exercises.RunExersice6(5));
+            //Console.WriteLine(exercises.RunExersice7(5));
 
             Console.ReadKey();
 
